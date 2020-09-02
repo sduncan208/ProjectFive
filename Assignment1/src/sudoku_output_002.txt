@@ -1,0 +1,4 @@
+Row 3 is invalid
+Column 6 is invalid
+Square 2 is invalid
+Invalid solution
