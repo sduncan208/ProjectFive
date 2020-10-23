@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class InvoiceReport {
 	public static ArrayList<String> fileReading(String Path) throws IOException {
-		ReadingFiles fileOne = new ReadingFiles(Path);
+		FileManager fileOne = new FileManager(Path);
 		ArrayList<String> inputStuff = fileOne.getDataList();
 		return inputStuff;
 	}
@@ -35,5 +35,6 @@ public class InvoiceReport {
 		InvoiceList invoices = new InvoiceList(fileReading(pathFour), persons, customers, products);
 		
 		output(invoices, pathFive);
+
 	}
 }

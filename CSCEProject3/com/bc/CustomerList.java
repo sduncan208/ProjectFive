@@ -7,9 +7,9 @@ package com.bc;
 
 import java.util.ArrayList;
 
-public class CustomerList implements ListInterface<Customers>{
+public class CustomerList implements ListInterface<Customer>{
 
-	private ArrayList<Customers> listOfObjects = new ArrayList<>();
+	private ArrayList<Customer> listOfObjects = new ArrayList<>();
 
 	public CustomerList(ArrayList<String> inputList, PersonList Contact) {
 		ArrayList<String> tempArray = new ArrayList<>();
@@ -18,13 +18,13 @@ public class CustomerList implements ListInterface<Customers>{
 			String customerItem = inputList.get(i);
 			String[] customerList = customerItem.split(";");
 			Name tempName = getContactFromCode(customerList[3], Contact).getName();
-			this.listOfObjects.add(new Customers(customerList[0], customerList[1], customerList[2], customerList[3], customerList[4], tempName));
+			this.listOfObjects.add(new Customer(customerList[0], customerList[1], customerList[2], customerList[3], customerList[4], tempName));
 			tempArray.add(customerList[3]);
 		}
 	}
 	
 	//Get the customer from each code
-	public Customers codeToObject (String code) {
+	public Customer codeToObject (String code) {
 		for (int i = 0; i < this.listOfObjects.size(); i++) {
 			if (getObject(i).getCustomerCode().equals(code))
 				return getObject(i);
@@ -33,8 +33,8 @@ public class CustomerList implements ListInterface<Customers>{
 	}
 
 	// Get the person assigned to each code
-	public Persons getContactFromCode(String personCode1, PersonList personCode2) {
-		Persons tempPerson = personCode2.codeToObject(personCode1);
+	public Person getContactFromCode(String personCode1, PersonList personCode2) {
+		Person tempPerson = personCode2.codeToObject(personCode1);
 		return tempPerson;
 	}
 	
@@ -42,7 +42,7 @@ public class CustomerList implements ListInterface<Customers>{
 		return listOfObjects.size();
 	}
 
-	public Customers getObject(int index) {
+	public Customer getObject(int index) {
 		return listOfObjects.get(index);
 	}
 }

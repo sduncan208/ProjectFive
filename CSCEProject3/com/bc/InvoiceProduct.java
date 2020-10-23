@@ -8,17 +8,17 @@ package com.bc;
 import java.util.ArrayList;
 
 public class InvoiceProduct {
-	private Products product;
+	private Product product;
 	private double num;
-	private Products associatedRepair;
+	private Product associatedRepair;
 	
-	public InvoiceProduct(Products _product, double d) {
+	public InvoiceProduct(Product _product, double d) {
 		this.product = _product;
 		this.num = d;
 		this.associatedRepair = null;
 	}
 	
-	public InvoiceProduct(Products _product, double _numOne, Products _repair) {
+	public InvoiceProduct(Product _product, double _numOne, Product _repair) {
 		this.product = _product;
 		this.num = _numOne;
 		this.associatedRepair = _repair;
@@ -28,15 +28,15 @@ public class InvoiceProduct {
 		return this.product.getProductType();
 	}
 
-	public Products getProduct() {
+	public Product getProduct() {
 		return product;
 	}
 	
-	public Products getAssociatedRepair() {
+	public Product getAssociatedRepair() {
 		return this.associatedRepair;
 	}
 
-	public void setProduct(Products product) {
+	public void setProduct(Product product) {
 		this.product = product;
 	}
 

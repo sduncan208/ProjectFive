@@ -7,8 +7,8 @@ package com.bc;
 
 import java.util.ArrayList;
 
-public class PersonList implements ListInterface<Persons> {
-	private ArrayList<Persons> listOfObjects = new ArrayList<>();
+public class PersonList implements ListInterface<Person> {
+	private ArrayList<Person> listOfObjects = new ArrayList<>();
 
 	public PersonList(ArrayList<String> inputList) {
 		for (int i = 0; i < inputList.size(); i++) {
@@ -17,7 +17,7 @@ public class PersonList implements ListInterface<Persons> {
 
 			// Polymorphism. Accounts for inputs that don't have an email associated with it
 			if (personList.length < 4) {
-				this.listOfObjects.add(new Persons(personList[0], personList[1], personList[2]));
+				this.listOfObjects.add(new Person(personList[0], personList[1], personList[2]));
 			} else {
 				// Splits multiple emails
 				ArrayList<String> emails = new ArrayList<>();
@@ -25,12 +25,12 @@ public class PersonList implements ListInterface<Persons> {
 				for (String addingEmail : tempEmailList) {
 					emails.add(addingEmail);
 				}
-				this.listOfObjects.add(new Persons(personList[0], personList[1], personList[2], emails));
+				this.listOfObjects.add(new Person(personList[0], personList[1], personList[2], emails));
 			}
 		}
 	}
 
-	public Persons codeToObject(String personCode) {
+	public Person codeToObject(String personCode) {
 		for (int i = 0; i < this.listOfObjects.size(); i++) {
 			if (getObject(i).getPersonCode().equals(personCode))
 				return getObject(i);
@@ -42,7 +42,7 @@ public class PersonList implements ListInterface<Persons> {
 		return listOfObjects.size();
 	}
 
-	public Persons getObject(int index) {
+	public Person getObject(int index) {
 		return listOfObjects.get(index);
 	}
 }
