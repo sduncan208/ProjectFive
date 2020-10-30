@@ -29,7 +29,7 @@ public class InvoiceReport {
 		String pathFour = "data/Invoices.dat";
 		String pathFive = "data/output.txt";
 		
-		PersonList persons = new PersonList(fileReading(pathOne));
+		PersonList persons = new PersonList();
 		CustomerList customers = new CustomerList(fileReading(pathTwo), persons);
 		ProductList products = new ProductList(fileReading(pathThree));
 		InvoiceList invoices = new InvoiceList(fileReading(pathFour), persons, customers, products);
