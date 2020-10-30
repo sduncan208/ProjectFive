@@ -42,7 +42,7 @@ public class SummaryWriter {
 			taxes += temp.taxes();
 			total += temp.total();
 			System.out.println(String.format("%-10s", temp.getInvoiceCode())
-					+ String.format("%-30s", temp.getPersonAssociated().nameToString())
+					+ String.format("%-30s", temp.getPersonAssociated().getName())
 					+ String.format("%-30s", temp.getCustomerAssociated().getName())
 					+ String.format("$%9.2f", temp.subtotal()) + "  "
 					+ String.format("$%9.2f", temp.discounts()) + "  "
@@ -66,7 +66,7 @@ public class SummaryWriter {
 
 			System.out.println("Owner:");
 			System.out.println(
-					String.format("        %-40s", this.invoices.getObject(i).getPersonAssociated().nameToString()));
+					String.format("        %-40s", this.invoices.getObject(i).getPersonAssociated().getName()));
 			if (this.invoices.getObject(i).getPersonAssociated().emailsToString() != null)
 				System.out.println(String.format("        %-40s",
 						this.invoices.getObject(i).getPersonAssociated().emailsToString()));
@@ -179,7 +179,7 @@ public class SummaryWriter {
 			taxes += temp.taxes();
 			total += temp.total();
 			writer.println(String.format("%-10s", temp.getInvoiceCode())
-					+ String.format("%-30s", temp.getPersonAssociated().nameToString())
+					+ String.format("%-30s", temp.getPersonAssociated().getName())
 					+ String.format("%-30s", temp.getCustomerAssociated().getName())
 					+ String.format("$%9.2f", temp.subtotal()) + "  "
 					+ String.format("$%9.2f", temp.discounts()) + "  "
@@ -203,7 +203,7 @@ public class SummaryWriter {
 
 			writer.println("Owner:");
 			writer.println(
-					String.format("        %-40s", this.invoices.getObject(i).getPersonAssociated().nameToString()));
+					String.format("        %-40s", this.invoices.getObject(i).getPersonAssociated().getName()));
 			if (this.invoices.getObject(i).getPersonAssociated().emailsToString() != null)
 				writer.println(String.format("        %-40s",
 						this.invoices.getObject(i).getPersonAssociated().emailsToString()));

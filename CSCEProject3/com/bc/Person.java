@@ -7,34 +7,38 @@ package com.bc;
 
 import java.util.ArrayList;
 
-public class Person extends AddressName {
+public class Person {
 	private String personCode;
+	private String firstName;
+	private String lastName;
+	private Address personAddress;
 	private ArrayList<String> emailAddresses = new ArrayList<>();
 
-	public Person(String _personCode, String _name, String _address, ArrayList<String> inputAddresses) {
-		super(_name, _address);
+	public Person(String _personCode, String _firstName, String _lastName) {
+		this.firstName = _firstName;
+		this.lastName = _lastName;
 		this.personCode = _personCode;
-		for(String addingAddress : inputAddresses) {
-			this.emailAddresses.add(addingAddress);
-		}
-	}
-	
-	public Person(String _personCode, String _name, String _address) {
-		super(_name, _address);
-		this.personCode = _personCode;
+		this.personAddress = null;
 		this.emailAddresses.add("");
 	}
 	
+	public void addEmailAddress(String emailAddress) {
+		if(this.emailAddresses.get(0).equals(""))
+			this.emailAddresses.set(0, emailAddress);
+		else 
+			this.emailAddresses.add(emailAddress);
+	}
+	
+	public void addAddress(Address address) {
+		this.personAddress = address;
+	}
+	
 	public Address getAddress() {
-		return super.personAddress;
+		return this.personAddress;
 	}
 	
-	public Name getName() {
-		return super.personName;
-	}
-	
-	public String nameToString() {
-		return super.personName.toString();
+	public String getName() {
+		return this.firstName + " " + this.lastName;
 	}
 	
 	public String emailsToString() {
@@ -53,7 +57,7 @@ public class Person extends AddressName {
 	
 	@Override
 	public String toString() {
-		return "Persons [personCode=" + this.personCode + ", name=" + super.personName.toString() + ", address=" + super.personAddress.toString() + ", emailAddress="
+		return "Persons [personCode=" + this.personCode + ", name=" + this.getName() + ", address=" + this.personAddress.toString() + ", emailAddress="
 				+ getEmailAddresses() + "]";
 	}
 
