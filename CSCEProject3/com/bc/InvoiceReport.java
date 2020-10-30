@@ -30,8 +30,8 @@ public class InvoiceReport {
 		String pathFive = "data/output.txt";
 		
 		PersonList persons = new PersonList();
-		CustomerList customers = new CustomerList(fileReading(pathTwo), persons);
-		ProductList products = new ProductList(fileReading(pathThree));
+		CustomerList customers = new CustomerList(persons);
+		ProductList products = new ProductList();
 		InvoiceList invoices = new InvoiceList(fileReading(pathFour), persons, customers, products);
 		
 		output(invoices, pathFive);

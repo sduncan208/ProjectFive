@@ -10,19 +10,19 @@ public class Customer {
 	private String customerCode;
 	private String customerType;
 	private String name;
-	private String customerName;
 	private String contactCode;
 	private Address address;
 
-	public Customer(String customerCode, String customerType, String name, String contactCode, String _address, String customerName) {
+	public Customer(String customerCode, String customerType, String name, String contactCode) {
 		this.customerCode = customerCode;
 		this.customerType = customerType;
 		this.name = name;
 		this.contactCode = contactCode;
-		this.customerName = customerName;
-		
-		String[] splitAddress = _address.split(",");
-		this.address = new Address(splitAddress[0], splitAddress[1], splitAddress[2], splitAddress[3], splitAddress[4]);
+		this.address = null;
+	}
+	
+	public void addAddress(Address input) {
+		this.address = input;
 	}
 
 	public String toString() {
