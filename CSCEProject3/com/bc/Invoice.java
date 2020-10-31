@@ -12,7 +12,6 @@ public class Invoice {
 	private String invoiceCode;
 	private String ownerCode;
 	private String customerCode;
-	private String listOfProducts;
 	
 	private Person personAssociated;
 	private Customer customerAssociated;
@@ -22,11 +21,10 @@ public class Invoice {
 	private PersonList allPeople;
 	private ProductList allProducts;
 	
-	public Invoice(String _invoiceCode, String _ownerCode, String _customerCode, String _listOfProducts, PersonList _allPeople, CustomerList _allCustomers, ProductList _allProducts) {
+	public Invoice(String _invoiceCode, String _ownerCode, String _customerCode, PersonList _allPeople, CustomerList _allCustomers, ProductList _allProducts) {
 		this.invoiceCode = _invoiceCode;
 		this.ownerCode = _ownerCode;
 		this.customerCode = _customerCode;
-		this.listOfProducts = _listOfProducts;
 		
 		this.allCustomers = _allCustomers;
 		this.allPeople = _allPeople;
@@ -35,7 +33,6 @@ public class Invoice {
 		
 		retrievePerson();
 		retrieveCustomer();
-		createProductList(this.listOfProducts);
 	}
 	
 	public void retrievePerson() {
@@ -46,28 +43,14 @@ public class Invoice {
 		this.customerAssociated = this.allCustomers.codeToObject(this.customerCode);
 	}
 	
-	//Splits the products list and returns the associated products
-	public void createProductList(String productList) {
-		//Splits up individual products
-		String[] tempArray = productList.split(",");
-		ArrayList<String[]> products = new ArrayList<String[]>();
-		
-		//Puts all the products into an arrayList as String[]
-		for(String x : tempArray) {
-			String[] productString = x.split(":");
-			products.add(productString);
-		}
-		
-		//Returns the product associated with each code and then adds that to the list of products 
-		for(String[] x : products) {
-			Product resultProduct = this.allProducts.codeToObject(x[0]);
-			if (x.length == 2) {
-				InvoiceProduct temp = new InvoiceProduct(resultProduct, Double.parseDouble(x[1]));
-				this.productsAssociated.add(temp);
-			} else {
-				Product resultRepair = this.allProducts.codeToObject(x[2]);
-				this.productsAssociated.add(new InvoiceProduct(resultProduct, Double.parseDouble(x[1]), resultRepair));
-			}
+	// Splits the products list and returns the associated products
+	public void addProduct(String code, Double multiplier, String associatedCode) {
+		Product resultProduct = this.allProducts.codeToObject(code);
+		if (associatedCode != null) {
+			this.productsAssociated.add(new InvoiceProduct(resultProduct, multiplier));
+		} else {
+			Product resultRepair = this.allProducts.codeToObject(associatedCode);
+			this.productsAssociated.add(new InvoiceProduct(resultProduct, multiplier, resultRepair));
 		}
 	}
 
@@ -228,10 +211,6 @@ public class Invoice {
 
 	public String getCustomerCode() {
 		return customerCode;
-	}
-
-	public String getListOfProducts() {
-		return listOfProducts;
 	}
 
 	public Person getPersonAssociated() {

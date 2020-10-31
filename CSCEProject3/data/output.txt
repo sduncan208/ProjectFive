@@ -1,13 +1,14 @@
 Executive Summary Report:
 Code      Owner                         Customer Account              Subtotal    Discounts   Fees        Taxes       Total     
 --------------------------------------------------------------------------------------------------------------------------------
-INV001    McLoughlin,  Sean             Car Tech                      $  6607.05  $     0.00  $    75.50  $   280.80  $6963.35
-INV002    Hiraide,  Takashi             Dancing Cars                  $   423.55  $   -22.87  $     0.00  $    33.88  $ 434.56
-INV003    Rubio,  Juli                  Boise Library                 $   202.50  $     0.00  $    75.50  $     8.61  $ 286.61
-INV004    Duncan,  Cecilia              Winter Driving                $  1782.73  $     0.00  $     0.00  $   142.62  $1925.35
-INV005    Peppernell,  Courtney         TARDIS                        $  2716.63  $  -102.00  $     0.00  $   209.17  $2823.80
+INV001    Sean McLoughlin               Dancing Cars                  $  6638.10  $  -358.46  $     0.00  $   531.05  $6810.69
+INV002    Takashi Hiraide               Dancing Cars                  $   392.50  $   -21.20  $     0.00  $    31.40  $ 402.71
+INV003    Juli Rubio                    Car Tech                      $    25.50  $     0.00  $    75.50  $     1.08  $ 102.08
+INV004    Cecilia Duncan                Winter Driving                $   202.50  $     0.00  $     0.00  $    16.20  $ 218.70
+INV005    Courtney Peppernell           TARDIS                        $  1779.75  $     0.00  $     0.00  $   142.38  $1922.13
+INV006    Beth Crowley                  Boise Library                 $  2307.68  $     0.00  $    75.50  $    98.08  $2481.26
 --------------------------------------------------------------------------------------------------------------------------------
-Totals:                                                               $ 11732.46  $  -124.87  $   151.00  $   675.08  $12433.67
+Totals:                                                               $ 11346.03  $  -379.65  $   151.00  $   820.19  $11937.57
 
 
 
@@ -16,23 +17,25 @@ Invoice Details:
 Invoice INV001
 ------------------------------
 Owner:
-        McLoughlin,  Sean                       
+        Sean McLoughlin                         
         []                                      
         2313 Jenna Lana                         
-        Cincinnati, OH USA 45231                
+        Cincinnati, OH USA OH                   
 Customer:
-        Car Tech                                
-        1037 Zimmerman Lane                     
-        Los Angeles, CA USA 90017               
+        Dancing Cars                            
+        779 New Creek Road                      
+        Centre, AL USA AL                       
 Products:
   Code        Description                                                           Subtotal    Discounts   Taxes       Total     
   ----------------------------------------------------------------------------------------------------------------------------
-  4GXqp6LxM   1967 Chevy Impala (66 days @ $102.75/day)                             $  6607.05  $     0.00  $   280.80  $6887.85
+  4GXqp6LxM   1967 Chevy Impala (66 days @ $102.75/day)                             $  6607.05  $     0.00  $   528.56  $7135.61
+              (+ $25.55 cleaning fee, -$200.00 deposit refund)                      
+  4GXqp6LxM   1967 Chevy Impala (2. days @ $102.75/day)                             $    31.05  $     0.00  $     2.48  $  33.53
               (+ $25.55 cleaning fee, -$200.00 deposit refund)                      
 ------------------------------------------------------------------------------------------------------------------------------
-Item Totals:                                                                        $  6607.05  $     0.00  $   280.80  $6963.35
-Business Account Fees:                                                                                                  $  75.50
-Grand Total:                                                                                                            $6963.35
+Item Totals:                                                                        $  6638.10  $  -358.46  $   531.05  $6810.69
+Loyal Customer Discount (5% off):                                                                                       $-358.46
+Grand Total:                                                                                                            $6810.69
                               Thank you for doing business with us!
 
 
@@ -42,25 +45,23 @@ Invoice Details:
 Invoice INV002
 ------------------------------
 Owner:
-        Hiraide,  Takashi                       
+        Takashi Hiraide                         
         [wabdoup@bokikstore.com]                
         3207 Hog Camp Road                      
-        La Grange, IL USA 60525                 
+        La Grange, IL USA IL                    
 Customer:
         Dancing Cars                            
         779 New Creek Road                      
-        Centre, AL USA 35960                    
+        Centre, AL USA AL                       
 Products:
   Code        Description                                                           Subtotal    Discounts   Taxes       Total     
   ----------------------------------------------------------------------------------------------------------------------------
   KzQW71qkj   Windsheild Repair (8. hours of labour @ $30.25/hour)                  $   392.50  $     0.00  $    31.40  $ 423.90
               (+ $150.50 for parts)                                                 
-  4GXqp6LxM   1967 Chevy Impala (2. days @ $102.75/day)                             $    31.05  $     0.00  $     2.48  $  33.53
-              (+ $25.55 cleaning fee, -$200.00 deposit refund)                      
 ------------------------------------------------------------------------------------------------------------------------------
-Item Totals:                                                                        $   423.55  $   -22.87  $    33.88  $ 434.56
-Loyal Customer Discount (5% off):                                                                                       $ -22.87
-Grand Total:                                                                                                            $ 434.56
+Item Totals:                                                                        $   392.50  $   -21.20  $    31.40  $ 402.71
+Loyal Customer Discount (5% off):                                                                                       $ -21.20
+Grand Total:                                                                                                            $ 402.71
                               Thank you for doing business with us!
 
 
@@ -70,23 +71,27 @@ Invoice Details:
 Invoice INV003
 ------------------------------
 Owner:
-        Rubio,  Juli                            
+        Juli Rubio                              
         [3djamel.bidk@bagshare.org]             
         2977 Scenic Way                         
-        Dana, IL USA 47847                      
+        Dana, IL USA IL                         
 Customer:
-        Boise Library                           
-        3043 Forest Drive                       
-        Dale City, VA USA 22193                 
+        Car Tech                                
+        1037 Zimmerman Lane                     
+        Los Angeles, CA USA CA                  
 Products:
   Code        Description                                                           Subtotal    Discounts   Taxes       Total     
   ----------------------------------------------------------------------------------------------------------------------------
-  miga0IebX   Tow > 15 miles (30 miles @ $6.75/mile)                                $   202.50  $     0.00  $     8.61  $ 211.11
+  Vc5PhEvTK   16-oz Coffee (2. units @ $4.25/unit)                                  $     8.50  $     0.00  $     0.36  $   8.86
+                                                                                    
+  Vc5PhEvTK   16-oz Coffee (2. units @ $4.25/unit)                                  $     8.50  $     0.00  $     0.36  $   8.86
+                                                                                    
+  Vc5PhEvTK   16-oz Coffee (2. units @ $4.25/unit)                                  $     8.50  $     0.00  $     0.36  $   8.86
                                                                                     
 ------------------------------------------------------------------------------------------------------------------------------
-Item Totals:                                                                        $   202.50  $     0.00  $     8.61  $ 286.61
+Item Totals:                                                                        $    25.50  $     0.00  $     1.08  $ 102.08
 Business Account Fees:                                                                                                  $  75.50
-Grand Total:                                                                                                            $ 286.61
+Grand Total:                                                                                                            $ 102.08
                               Thank you for doing business with us!
 
 
@@ -96,24 +101,22 @@ Invoice Details:
 Invoice INV004
 ------------------------------
 Owner:
-        Duncan,  Cecilia                        
+        Cecilia Duncan                          
         [2mnejja.nourf@tapiitudulu.com]         
         114 Wyatt Street                        
-        West Palm Beach, FL USA 33411           
+        West Palm Beach, FL USA FL              
 Customer:
         Winter Driving                          
         938 Armory Road                         
-        Wilmington, NC USA 28403                
+        Wilmington, NC USA NC                   
 Products:
   Code        Description                                                           Subtotal    Discounts   Taxes       Total     
   ----------------------------------------------------------------------------------------------------------------------------
-  efG1izvXg   2005 Toyota 4 Runner (21 days @ $86.45/day)                           $  1779.75  $     0.00  $   142.38  $1922.13
-              (+ $24.54 cleaning fee, -$60.24 deposit refund)                       
-  JgLLovuUT   16-oz Tea (1. units @ $2.98/unit)                                     $     2.98  $     0.00  $     0.24  $   3.22
+  miga0IebX   Tow > 15 miles (30 miles @ $6.75/mile)                                $   202.50  $     0.00  $    16.20  $ 218.70
                                                                                     
 ------------------------------------------------------------------------------------------------------------------------------
-Item Totals:                                                                        $  1782.73  $     0.00  $   142.62  $1925.35
-Grand Total:                                                                                                            $1925.35
+Item Totals:                                                                        $   202.50  $     0.00  $    16.20  $ 218.70
+Grand Total:                                                                                                            $ 218.70
                               Thank you for doing business with us!
 
 
@@ -123,26 +126,46 @@ Invoice Details:
 Invoice INV005
 ------------------------------
 Owner:
-        Peppernell,  Courtney                   
+        Courtney Peppernell                     
         []                                      
         4266 Goodwin Avenue                     
-        Spokane, WA USA 99201                   
+        Spokane, WA USA WA                      
 Customer:
         TARDIS                                  
         2041 Fowler Avenue                      
-        Atlanta, GA USA 30303                   
+        Atlanta, GA USA GA                      
 Products:
   Code        Description                                                           Subtotal    Discounts   Taxes       Total     
   ----------------------------------------------------------------------------------------------------------------------------
-  dPWRS9BbV   Tow < 15 miles (12 miles @ $8.50/mile)                                $   102.00  $  -102.00  $     0.00  $   0.00
-                                                                                    
-  wPOObkXsf   Engine Replacement (15 hours of labour @ $50.23/hour)                 $  2307.68  $     0.00  $   184.61  $2492.29
-              (+ $1554.23 for parts)                                                
-  Vc5PhEvTK   16-oz Coffee (2. units @ $4.25/unit)                                  $     8.50  $     0.00  $     0.68  $   9.18
-                                                                                    
-  QgbJUIxaC   2012 Toyota Sienna (5. days @ $75.56/day)                             $   298.45  $     0.00  $    23.88  $ 322.33
-              (+ $20.65 cleaning fee, -$100.00 deposit refund)                      
+  efG1izvXg   2005 Toyota 4 Runner (21 days @ $86.45/day)                           $  1779.75  $     0.00  $   142.38  $1922.13
+              (+ $24.54 cleaning fee, -$60.24 deposit refund)                       
 ------------------------------------------------------------------------------------------------------------------------------
-Item Totals:                                                                        $  2716.63  $  -102.00  $   209.17  $2823.80
-Grand Total:                                                                                                            $2823.80
+Item Totals:                                                                        $  1779.75  $     0.00  $   142.38  $1922.13
+Grand Total:                                                                                                            $1922.13
+                              Thank you for doing business with us!
+
+
+
+Invoice Details:
+--------------------------------------------------------------------------------------------------------------------------------
+Invoice INV006
+------------------------------
+Owner:
+        Beth Crowley                            
+        [ahsdjabd@sd110.xyz, erueso0tstanleyallthetj@chrisjoyce.net]
+        2054 Jones Avenue                       
+        Yanceyville, NC USA NC                  
+Customer:
+        Boise Library                           
+        3043 Forest Drive                       
+        Dale City, VA USA VA                    
+Products:
+  Code        Description                                                           Subtotal    Discounts   Taxes       Total     
+  ----------------------------------------------------------------------------------------------------------------------------
+  wPOObkXsf   Engine Replacement (15 hours of labour @ $50.23/hour)                 $  2307.68  $     0.00  $    98.08  $2405.76
+              (+ $1554.23 for parts)                                                
+------------------------------------------------------------------------------------------------------------------------------
+Item Totals:                                                                        $  2307.68  $     0.00  $    98.08  $2481.26
+Business Account Fees:                                                                                                  $  75.50
+Grand Total:                                                                                                            $2481.26
                               Thank you for doing business with us!

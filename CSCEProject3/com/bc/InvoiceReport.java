@@ -23,16 +23,12 @@ public class InvoiceReport {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String pathOne = "data/Persons.dat";
-		String pathTwo = "data/Customers.dat";
-		String pathThree = "data/Products.dat";
-		String pathFour = "data/Invoices.dat";
 		String pathFive = "data/output.txt";
 		
 		PersonList persons = new PersonList();
 		CustomerList customers = new CustomerList(persons);
 		ProductList products = new ProductList();
-		InvoiceList invoices = new InvoiceList(fileReading(pathFour), persons, customers, products);
+		InvoiceList invoices = new InvoiceList(persons, customers, products);
 		
 		output(invoices, pathFive);
 
