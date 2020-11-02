@@ -44,21 +44,29 @@ public class InvoiceData {
 	// Joe
 	public static void removeAllPersons() {
 		/* TODO */
-		String url = DatabaseInfo.URL;
-		String user = DatabaseInfo.USERNAME;
-		String password = DatabaseInfo.PASSWORD;
 
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+		String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 
 		try {
-			con = DriverManager.getConnection(url, user, password);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			Class.forName(DRIVER_CLASS).newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
+		Connection con = null;
+
+		try {
+			con = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		PreparedStatement ps = null;
+
 		try {
 			ps = con.prepareStatement("DELETE FROM InvoiceProduct_156");
 			ps.executeUpdate();
@@ -75,11 +83,9 @@ public class InvoiceData {
 		}
 
 		try {
-			if (rs != null && !rs.isClosed()) 
-				rs.close();
 			if (ps != null && !ps.isClosed())
 				ps.close();
-			if (con != null && !con.isClosed()) 
+			if (con != null && !con.isClosed())
 				con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -141,8 +147,12 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (personKey != null)
-			throw new RuntimeException("Please enter a valid personCode");
+		if (personKey != null) {
+			try {
+			} catch (RuntimeException e) {
+				throw new RuntimeException("Please enter a valid personCode");
+			}
+		}
 
 		// Inserts the new address into Address_156
 		Integer addressKey = null;
@@ -244,8 +254,12 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (personKey == null)
-			throw new RuntimeException("Please enter a valid personCode");
+		if (personKey != null) {
+			try {
+			} catch (RuntimeException e) {
+				throw new RuntimeException("Please enter a valid personCode");
+			}
+		}
 
 		// Inserts the new email into Email_156
 		query = "INSERT INTO Email_156 (emailAddress, personId)" + "VALUES (?, ?)";
@@ -287,7 +301,6 @@ public class InvoiceData {
 
 		Connection con = null;
 		PreparedStatement ps = null;
-		ResultSet rs = null;
 
 		try {
 			con = DriverManager.getConnection(url, user, password);
@@ -304,11 +317,9 @@ public class InvoiceData {
 		}
 
 		try {
-			if (rs != null && !rs.isClosed()) 
-				rs.close();
-			if (ps!= null && !ps.isClosed())
+			if (ps != null && !ps.isClosed())
 				ps.close();
-			if (con != null && !con.isClosed()) 
+			if (con != null && !con.isClosed())
 				con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -333,7 +344,13 @@ public class InvoiceData {
 	// Joe
 	public static void addCustomer(String customerCode, String customerType, String primaryContactPersonCode,
 			String name, String street, String city, String state, String zip, String country) {
-		/* TODO */
+		if (!customerType.equals("P")) {
+			if(!customerType.equals("B")) {
+				System.out.println("Please enter a valid customer type");
+				return;
+			}
+		}
+
 		String url = DatabaseInfo.URL;
 		String user = DatabaseInfo.USERNAME;
 		String password = DatabaseInfo.PASSWORD;
@@ -342,7 +359,6 @@ public class InvoiceData {
 		PreparedStatement pstmt1 = null;
 		PreparedStatement pstmt2 = null;
 		PreparedStatement pstmt3 = null;
-		ResultSet rs1 = null;
 		ResultSet rs2 = null;
 		ResultSet rs3 = null;
 		try {
@@ -351,7 +367,7 @@ public class InvoiceData {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		String query = "select personId from Person_156 where personCode like ?;";
 
 		PreparedStatement ps = null;
@@ -370,9 +386,11 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (personKey == null)
-			throw new RuntimeException("Please enter a valid personCode");
-		
+		if (personKey == null) {
+			System.out.println("Please enter a valid person code");
+			return;
+		}
+
 		query = "select customerId from Customer_156 where customerCode like ?;";
 
 		ps = null;
@@ -391,9 +409,10 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (customerKey != null)
-			throw new RuntimeException("Please enter a customerCode that does not already exist");
-		
+		if (customerKey != null) {
+			System.out.println("Please enter a valid customer code");
+			return;
+		}
 
 		String query1 = "SELECT personId FROM Person_156 WHERE personCode = ?";
 
@@ -433,15 +452,13 @@ public class InvoiceData {
 		}
 
 		try {
-			if (rs1 != null && !rs1.isClosed()) 
-				rs1.close();
-			if (rs2 != null && !rs2.isClosed()) 
+			if (rs2 != null && !rs2.isClosed())
 				rs2.close();
-			if (rs3 != null && !rs3.isClosed()) 
+			if (rs3 != null && !rs3.isClosed())
 				rs3.close();
 			if (rs != null && !rs.isClosed())
 				rs.close();
-			if (pstmt1 != null && !pstmt1.isClosed()) 
+			if (pstmt1 != null && !pstmt1.isClosed())
 				pstmt1.close();
 			if (pstmt2 != null && !pstmt2.isClosed())
 				pstmt2.close();
@@ -464,16 +481,29 @@ public class InvoiceData {
 	// Joe
 	public static void removeAllProducts() {
 		/* TODO */
-		String url = DatabaseInfo.URL;
-		String user = DatabaseInfo.USERNAME;
-		String password = DatabaseInfo.PASSWORD;
-
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+		String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 
 		try {
-			con = DriverManager.getConnection(url, user, password);
+			Class.forName(DRIVER_CLASS).newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		Connection con = null;
+
+		try {
+			con = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		PreparedStatement ps = null;
+
+		try {
 			ps = con.prepareStatement("DELETE FROM InvoiceProduct_156");
 			ps.executeUpdate();
 			ps = con.prepareStatement("DELETE FROM Concession_156");
@@ -493,11 +523,9 @@ public class InvoiceData {
 		}
 
 		try {
-			if (rs != null && !rs.isClosed())
-				rs.close();
 			if (ps != null && !ps.isClosed())
 				ps.close();
-			if (con != null && !con.isClosed()) 
+			if (con != null && !con.isClosed())
 				con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -512,7 +540,7 @@ public class InvoiceData {
 	 * @param productLabel
 	 * @param unitCost
 	 */
-	public static void addConcessionToInvoice(String productCode, String productLabel, double unitCost) {
+	public static void addConcession(String productCode, String productLabel, double unitCost) {
 		/* TODO */
 		String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 
@@ -535,30 +563,17 @@ public class InvoiceData {
 		}
 
 		// Checks if the concession already exists
-		String query = "SELECT concessionId FROM Concession_156 WHERE concessionCode LIKE ?;";
-
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Integer concessionCode = null;
 
-		try {
-			ps = conn.prepareStatement(query);
-			ps.setString(1, productCode);
-			rs = ps.executeQuery();
-			if (rs.next())
-				concessionCode = rs.getInt("concessionId");
-			rs.close();
-			ps.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (!productExistence(productCode)) {
+			System.out.println("Please enter a productCode that doesn't already exist");
+			return;
 		}
-
-		if (concessionCode != null)
-			throw new RuntimeException("Please enter a productCode that doesn't already exist");
 
 		// Inserts the new product into Product_156
 		Integer productKey = null;
-		query = "INSERT INTO Product_156 (productType, productDescription)" + "VALUES ('C', ?)";
+		String query = "INSERT INTO Product_156 (productType, productDescription)" + "VALUES ('C', ?)";
 
 		try {
 			ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -634,30 +649,17 @@ public class InvoiceData {
 		}
 
 		// Checks if the concession already exists
-		String query = "SELECT concessionId FROM Concession_156 WHERE concessionCode LIKE ?;";
-
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Integer concessionCode = null;
 
-		try {
-			ps = conn.prepareStatement(query);
-			ps.setString(1, productCode);
-			rs = ps.executeQuery();
-			if (rs.next())
-				concessionCode = rs.getInt("concessionId");
-			rs.close();
-			ps.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (!productExistence(productCode)) {
+			System.out.println("Please enter a productCode that doesn't already exist");
+			return;
 		}
-
-		if (concessionCode != null)
-			throw new RuntimeException("Please enter a productCode that doesn't already exist");
 
 		// Inserts the new product into Product_156
 		Integer productKey = null;
-		query = "INSERT INTO Product_156 (productType, productDescription)" + "VALUES ('R', ?)";
+		String query = "INSERT INTO Product_156 (productType, productDescription)" + "VALUES ('R', ?)";
 
 		try {
 			ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -722,35 +724,22 @@ public class InvoiceData {
 		Connection con = null;
 		PreparedStatement pstmt1 = null;
 		PreparedStatement pstmt2 = null;
-		ResultSet rs1 = null;
-		ResultSet rs2 = null;
+
 		try {
 			con = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		String query = "SELECT towId FROM Tow_156 WHERE towCode LIKE ?;";
 
+		// Checks if the concession already exists
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Integer towKey = null;
 
-		try {
-			ps = con.prepareStatement(query);
-			ps.setString(1, productCode);
-			rs = ps.executeQuery();
-			if (rs.next())
-				towKey = rs.getInt("towId");
-			rs.close();
-			ps.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (!productExistence(productCode)) {
+			System.out.println("Please enter a productCode that doesn't already exist");
+			return;
 		}
-
-		if (towKey != null)
-			throw new RuntimeException("Please enter a productCode that doesn't already exist");
 
 		String query1 = "INSERT INTO Product_156 (productType,productDescription) " + "VALUES ('T',?)";
 
@@ -773,10 +762,6 @@ public class InvoiceData {
 		}
 
 		try {
-			if (rs1 != null && !rs1.isClosed())
-				rs1.close();
-			if (rs2 != null && !rs2.isClosed())
-				rs2.close();
 			if (rs != null && !rs.isClosed())
 				rs.close();
 			if (pstmt1 != null && !pstmt1.isClosed())
@@ -813,34 +798,21 @@ public class InvoiceData {
 		Connection con = null;
 		PreparedStatement pstmt1 = null;
 		PreparedStatement pstmt2 = null;
-		ResultSet rs1 = null;
-		ResultSet rs2 = null;
+
 		try {
 			con = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		
-		String query = "SELECT rentalId FROM Rental_156 WHERE rentalCode LIKE ?;";
 
+		// Checks if the concession already exists
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		Integer rentalKey = null;
 
-		try {
-			ps = con.prepareStatement(query);
-			ps.setString(1, productCode);
-			rs = ps.executeQuery();
-			if (rs.next())
-				rentalKey = rs.getInt("rentalId");
-			rs.close();
-			ps.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (!productExistence(productCode)) {
+			System.out.println("Please enter a productCode that doesn't already exist");
+			return;
 		}
-
-		if (rentalKey != null)
-			throw new RuntimeException("Please enter a productCode that doesn't already exist");
 
 		String query1 = "INSERT INTO Product_156 (productType,productDescription) " + "VALUES ('R',?)";
 
@@ -867,10 +839,6 @@ public class InvoiceData {
 		}
 
 		try {
-			if (rs1 != null && !rs1.isClosed())
-				rs1.close();
-			if (rs2 != null && !rs2.isClosed())
-				rs2.close();
 			if (rs != null && !rs.isClosed())
 				rs.close();
 			if (pstmt1 != null && !pstmt1.isClosed())
@@ -892,18 +860,30 @@ public class InvoiceData {
 
 	// Joe
 	public static void removeAllInvoices() {
-		/* TODO */
-		String url = DatabaseInfo.URL;
-		String user = DatabaseInfo.USERNAME;
-		String password = DatabaseInfo.PASSWORD;
-
-		Connection con = null;
-		Statement stmt = null;
-		Statement stmtTwo = null;
-		ResultSet rs = null;
+		String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 
 		try {
-			con = DriverManager.getConnection(url, user, password);
+			Class.forName(DRIVER_CLASS).newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		Connection con = null;
+
+		try {
+			con = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		Statement stmt = null;
+		Statement stmtTwo = null;
+
+		try {
 			stmt = con.createStatement();
 			stmtTwo = con.createStatement();
 			stmtTwo.executeUpdate("DELETE FROM InvoiceProduct_156");
@@ -915,13 +895,11 @@ public class InvoiceData {
 		}
 
 		try {
-			if (rs != null && !rs.isClosed()) 
-				rs.close();
 			if (stmt != null && !stmt.isClosed())
 				stmt.close();
 			if (stmtTwo != null && !stmtTwo.isClosed())
 				stmtTwo.close();
-			if (con != null && !con.isClosed()) 
+			if (con != null && !con.isClosed())
 				con.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -981,9 +959,11 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (invoiceKey != null)
-			throw new RuntimeException("Please enter an invoice code that does not already exist");
-		
+		if (invoiceKey != null) {
+			System.out.println("Please enter an invoice code that does not already exist");
+			return;
+		}
+
 		query = "select personId from Person_156 where personCode like ?;";
 
 		ps = null;
@@ -1002,9 +982,11 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (personKey == null)
-			throw new RuntimeException("That owner does not exist");
-		
+		if (personKey == null) {
+			System.out.println("Please enter an existing owner");
+			return;
+		}
+
 		query = "select customerId from Customer_156 where customerCode like ?;";
 
 		ps = null;
@@ -1023,9 +1005,10 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (customerKey == null)
-			throw new RuntimeException("That customer does not exist");
-		
+		if (customerKey == null) {
+			System.out.println("Please enter a customer that exists");
+			return;
+		}
 
 		// Inserts the new person into Person_156
 		query = "INSERT INTO Invoice_156 (invoiceCode, personId, customerId)" + "VALUES (?, ?, ?)";
@@ -1105,9 +1088,11 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (invoiceKey == null)
-			throw new RuntimeException("Please enter an existing invoice code");
-		
+		if (invoiceKey == null) {
+			System.out.println("Please enter an existing invoice code");
+			return;
+		}
+
 		query = "select productId from Tow_156 where towCode like ?;";
 
 		ps = null;
@@ -1126,9 +1111,10 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (productKey == null)
-			throw new RuntimeException("Please enter an existing product code");
-		
+		if (productKey == null) {
+			System.out.println("Please enter an existing product code");
+			return;
+		}
 
 		// Inserts the new product into InvoiceProduct_156
 		query = "INSERT INTO InvoiceProduct_156 (invoiceId, productId, costMultiplier)" + "VALUES (?, ?, ?)";
@@ -1208,9 +1194,11 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (invoiceKey == null)
-			throw new RuntimeException("Please enter an existing invoice code");
-		
+		if (invoiceKey == null) {
+			System.out.println("Please enter an existing invoice code");
+			return;
+		}
+
 		query = "select productId from Repair_156 where repairCode like ?;";
 
 		ps = null;
@@ -1229,9 +1217,10 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (productKey == null)
-			throw new RuntimeException("Please enter an existing product code");
-		
+		if (productKey == null) {
+			System.out.println("Please enter an existing product code");
+			return;
+		}
 
 		// Inserts the new product into InvoiceProduct_156
 		query = "INSERT INTO InvoiceProduct_156 (invoiceId, productId, costMultiplier)" + "VALUES (?, ?, ?)";
@@ -1272,7 +1261,7 @@ public class InvoiceData {
 	 * @param repairCode
 	 */
 
-	public static void addConcession(String invoiceCode, String productCode, int quantity, String repairCode) {
+	public static void addConcessionToInvoice(String invoiceCode, String productCode, int quantity, String repairCode) {
 		/* TODO */
 		String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 
@@ -1313,9 +1302,11 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (invoiceKey == null)
-			throw new RuntimeException("Please enter an existing invoice code");
-		
+		if (invoiceKey == null) {
+			System.out.println("Please enter an existing invoice code");
+			return;
+		}
+
 		query = "select productId from Concession_156 where concessionCode like ?;";
 
 		ps = null;
@@ -1334,40 +1325,19 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (productKey == null)
-			throw new RuntimeException("Please enter an existing product code");
-		
-		Integer repairKey = null;
-		
-		if (repairCode != null) {
-			query = "select productId from Repair_156 where repairCode like ?;";
-
-			ps = null;
-			rs = null;
-
-			try {
-				ps = conn.prepareStatement(query);
-				ps.setString(1, productCode);
-				rs = ps.executeQuery();
-				if (rs.next())
-					repairKey = rs.getInt("productId");
-				rs.close();
-				ps.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
-			if (repairKey == null)
-				throw new RuntimeException("That associated repair does not exist");
+		if (productKey == null) {
+			System.out.println("Please enter an existing product code");
+			return;
 		}
-		
+
 		// Inserts the new product into InvoiceProduct_156
 		boolean hasRepair = false;
 		if (repairCode == null)
 			query = "INSERT INTO InvoiceProduct_156 (invoiceId, productId, costMultiplier)" + "VALUES (?, ?, ?)";
 		else {
 			hasRepair = true;
-			query = "INSERT INTO InvoiceProduct_156 (invoiceId, productId, costMultipler, associatedRepairCode)" + "VALUES (?, ?, ?, ?)";
+			query = "INSERT INTO InvoiceProduct_156 (invoiceId, productId, costMultiplier, associatedRepairCode)"
+					+ "VALUES (?, ?, ?, ?)";
 		}
 
 		try {
@@ -1375,7 +1345,7 @@ public class InvoiceData {
 			ps.setInt(1, invoiceKey);
 			ps.setInt(2, productKey);
 			ps.setDouble(3, Double.valueOf(quantity));
-			if (hasRepair) 
+			if (hasRepair)
 				ps.setString(4, repairCode);
 			ps.executeUpdate();
 			rs.close();
@@ -1448,9 +1418,11 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (invoiceKey == null)
-			throw new RuntimeException("Please enter an existing invoice code");
-		
+		if (invoiceKey == null) {
+			System.out.println("Please enter an existing invoice code");
+			return;
+		}
+
 		query = "select productId from Rental_156 where rentalCode like ?;";
 
 		ps = null;
@@ -1469,9 +1441,10 @@ public class InvoiceData {
 			e.printStackTrace();
 		}
 
-		if (productKey == null)
-			throw new RuntimeException("Please enter an existing product code");
-		
+		if (productKey == null) {
+			System.out.println("Please enter an existing product code");
+			return;
+		}
 
 		// Inserts the new product into InvoiceProduct_156
 		query = "INSERT INTO InvoiceProduct_156 (invoiceId, productId, costMultiplier)" + "VALUES (?, ?, ?)";
@@ -1499,6 +1472,122 @@ public class InvoiceData {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static boolean productExistence(String productCode) {
+		String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
+
+		try {
+			Class.forName(DRIVER_CLASS).newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		Connection conn = null;
+
+		try {
+			conn = DriverManager.getConnection(DatabaseInfo.URL, DatabaseInfo.USERNAME, DatabaseInfo.PASSWORD);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		// Checks if the concession already exists
+		String query = "SELECT concessionId FROM Concession_156 WHERE concessionCode LIKE ?;";
+
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Integer concessionCode = null;
+		Integer repairCode = null;
+		Integer towCode = null;
+		Integer rentalCode = null;
+
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setString(1, productCode);
+			rs = ps.executeQuery();
+			if (rs.next())
+				concessionCode = rs.getInt("concessionId");
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		if (concessionCode != null) {
+			System.out.println("Please enter a product code that doesn't already exist");
+		}
+
+		query = "SELECT repairId FROM Repair_156 WHERE repairCode LIKE ?;";
+
+		ps = null;
+		rs = null;
+
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setString(1, productCode);
+			rs = ps.executeQuery();
+			if (rs.next())
+				repairCode = rs.getInt("repairId");
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		if (repairCode != null) {
+			System.out.println("Please enter a product code that doesn't already exist");
+		}
+
+		query = "SELECT towId FROM Tow_156 WHERE towCode LIKE ?;";
+
+		ps = null;
+		rs = null;
+
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setString(1, productCode);
+			rs = ps.executeQuery();
+			if (rs.next())
+				towCode = rs.getInt("towId");
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		if (towCode != null) {
+			System.out.println("Please enter a productCode that doesn't already exist");
+		}
+			
+
+		query = "SELECT rentalId FROM Rental_156 WHERE rentalCode LIKE ?;";
+
+		ps = null;
+		rs = null;
+
+		try {
+			ps = conn.prepareStatement(query);
+			ps.setString(1, productCode);
+			rs = ps.executeQuery();
+			if (rs.next())
+				rentalCode = rs.getInt("rentalId");
+			rs.close();
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		if (rentalCode != null)
+			System.out.println("Please enter a productCode that doesn't already exist");
+
+		if (rentalCode == null && repairCode == null && concessionCode == null && towCode == null)
+			return true;
+
+		return false;
 	}
 
 }

@@ -46,7 +46,7 @@ public class Invoice {
 	// Splits the products list and returns the associated products
 	public void addProduct(String code, Double multiplier, String associatedCode) {
 		Product resultProduct = this.allProducts.codeToObject(code);
-		if (associatedCode != null) {
+		if (associatedCode == null) {
 			this.productsAssociated.add(new InvoiceProduct(resultProduct, multiplier));
 		} else {
 			Product resultRepair = this.allProducts.codeToObject(associatedCode);
@@ -91,7 +91,7 @@ public class Invoice {
 
 		// Checks if the towing is free. Only runs for a towing
 		if (temp.getProductType().equals("T")) {
-			boolean hasTowing = false;
+			boolean hasTowing = true;
 			boolean hasRepair = false;
 			boolean hasRental = false;
 			for (int i = 0; i < getProductsAssociated().size(); i++) {
@@ -99,8 +99,6 @@ public class Invoice {
 					hasRental = true;
 				if (getProductsAssociated().get(i).getProduct().getProductType().equals("F"))
 					hasRepair = true;
-				if (getProductsAssociated().get(i).getProduct().getProductType().equals("T"))
-					hasTowing = true;
 			}
 
 			for (int i = 0; i < getProductsAssociated().size(); i++) {
