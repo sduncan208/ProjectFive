@@ -38,18 +38,15 @@ public class InvoiceList implements ListInterface<Invoice>{
 			throw new RuntimeException(e);
 		}
 
-		String personQuery = "select a.invoiceCode, b.personCode, a.invoiceId from Invoice_156 as a join Person_156 as b on a.personId = b.personId;";
-		String customerQuery = "select b.customerCode from Invoice_156 as a join Customer_156 as b on a.customerId = b.customerId;";
-		String rentalQuery = "select a.invoiceProductId, b.rentalCode, a.costMultiplier from InvoiceProduct_156 as a join Rental_156 as b on a.productId = b.productId where a.productId = ?;";
-		String repairQuery = "select a.invoiceProductId, b.repairCode, a.costMultiplier from InvoiceProduct_156 as a join Repair_156 as b on a.productId = b.productId where a.productId = ?;";
-		String concessionQuery = "select a.invoiceProductId, b.concessionCode, a.costMultiplier, a.associatedRepairCode from InvoiceProduct_156 as a join Concession_156 as b on a.productId = b.productId where a.productId = ?;";
-		String towingQuery = "select a.invoiceProductId, b.towCode, a.costMultiplier from InvoiceProduct_156 as a join Tow_156 as b on a.productId = b.productId where a.productId = ?;";
+		String personCustomerQuery = "select a.invoiceCode, b.personCode, a.invoiceId, c.customerCode from Invoice_156 as a join Person_156 as b on a.personId = b.personId join Customer_156 as c on a.customerId = c.customerId;";
+		String rentalQuery = "select a.invoiceProductId, b.rentalCode, a.costMultiplier from InvoiceProduct_156 as a join Rental_156 as b on a.productId = b.productId where a.invoiceId = ?;";
+		String repairQuery = "select a.invoiceProductId, b.repairCode, a.costMultiplier from InvoiceProduct_156 as a join Repair_156 as b on a.productId = b.productId where a.invoiceId = ?;";
+		String concessionQuery = "select a.invoiceProductId, b.concessionCode, a.costMultiplier, a.associatedRepairCode from InvoiceProduct_156 as a join Concession_156 as b on a.productId = b.productId where a.invoiceId = ?;";
+		String towingQuery = "select a.invoiceProductId, b.towCode, a.costMultiplier from InvoiceProduct_156 as a join Tow_156 as b on a.productId = b.productId where a.invoiceId = ?;";
 
 		
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		PreparedStatement psTwo = null;
-		ResultSet rsTwo = null;
 		PreparedStatement psThree = null;
 		ResultSet rsThree = null;
 		
@@ -63,16 +60,13 @@ public class InvoiceList implements ListInterface<Invoice>{
 		int count = 0;
 
 		try {
-			ps = conn.prepareStatement(personQuery);
+			ps = conn.prepareStatement(personCustomerQuery);
 			rs = ps.executeQuery();
-			psTwo = conn.prepareStatement(customerQuery);
-			rsTwo = psTwo.executeQuery();
 			while (rs.next()) {
-				rsTwo.next();
 				invoiceCode = rs.getString("a.invoiceCode");
 				invoiceId = rs.getInt("a.invoiceId");
 				personCode = rs.getString("b.personCode");
-				customerCode = rsTwo.getString("b.customerCode");
+				customerCode = rs.getString("c.customerCode");
 				this.listOfObjects.add(new Invoice(invoiceCode, personCode, customerCode, people, customers, products));
 				
 				psThree = conn.prepareStatement(rentalQuery);
@@ -83,6 +77,8 @@ public class InvoiceList implements ListInterface<Invoice>{
 					multiplier = rsThree.getDouble("a.costMultiplier");
 					listOfObjects.get(count).addProduct(productCode, multiplier, associatedCode);
 				}
+				psThree = null;
+				rsThree = null;
 				
 				psThree = conn.prepareStatement(repairQuery);
 				psThree.setInt(1, invoiceId);
@@ -92,6 +88,8 @@ public class InvoiceList implements ListInterface<Invoice>{
 					multiplier = rsThree.getDouble("a.costMultiplier");
 					listOfObjects.get(count).addProduct(productCode, multiplier, associatedCode);
 				}
+				psThree = null;
+				rsThree = null;
 				
 				psThree = conn.prepareStatement(towingQuery);
 				psThree.setInt(1, invoiceId);
@@ -101,6 +99,8 @@ public class InvoiceList implements ListInterface<Invoice>{
 					multiplier = rsThree.getDouble("a.costMultiplier");
 					listOfObjects.get(count).addProduct(productCode, multiplier, associatedCode);
 				}
+				psThree = null;
+				rsThree = null;
 				
 				psThree = conn.prepareStatement(concessionQuery);
 				psThree.setInt(1, invoiceId);
@@ -112,14 +112,14 @@ public class InvoiceList implements ListInterface<Invoice>{
 					listOfObjects.get(count).addProduct(productCode, multiplier, associatedCode);
 					associatedCode = null;
 				}
+				psThree = null;
+				rsThree = null;
 				
 				count ++;	
 			}
 			
 			rs.close();
 			ps.close();
-			rsTwo.close();
-			psTwo.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -130,10 +130,6 @@ public class InvoiceList implements ListInterface<Invoice>{
 				rs.close();
 			if (ps != null && !ps.isClosed())
 				ps.close();
-			if (rsTwo != null && !rsTwo.isClosed())
-				rsTwo.close();
-			if (psTwo != null && !psTwo.isClosed())
-				psTwo.close();
 			if (rsThree!= null && !rsThree.isClosed())
 				rsThree.close();
 			if (psThree != null && !psThree.isClosed())
