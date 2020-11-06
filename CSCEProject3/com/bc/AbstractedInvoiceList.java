@@ -9,9 +9,9 @@ public class AbstractedInvoiceList {
 		this.head = null;
 		this.size = 0;
 	}
-	
+
 	public void sortTotals() {
-		
+
 	}
 
 	public int getSize() {
@@ -84,7 +84,7 @@ public class AbstractedInvoiceList {
 
 		InvoiceListNode temp = this.head;
 		while (temp != null) {
-			System.out.println(temp.getInvoice().toString());
+			System.out.println(temp.getInvoice().getInvoiceCode() + " total: " + temp.getInvoice().total());
 			temp = temp.getNext();
 		}
 	}

@@ -30,7 +30,15 @@ public class InvoiceReport {
 		ProductList products = new ProductList();
 		InvoiceList invoices = new InvoiceList(persons, customers, products);
 		
-		output(invoices, pathFive);
+		
+		AbstractedInvoiceList tester = new AbstractedInvoiceList();
+		for (int i = 0; i < invoices.getSize(); i ++) {
+			tester.addToEnd(invoices.getObject(i));
+		}
+		
+		tester.print();
+		
+		//output(invoices, pathFive);
 
 	}
 }
