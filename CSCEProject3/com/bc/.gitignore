@@ -34,3 +34,5 @@
 /Product.class
 /FileReader.class
 /FileManager.class
+/InvoiceListNode.class
+/AbstractedInvoiceList.class
