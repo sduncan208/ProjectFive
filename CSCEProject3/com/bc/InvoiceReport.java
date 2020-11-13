@@ -29,6 +29,7 @@ public class InvoiceReport {
 		CustomerList customers = new CustomerList(persons);
 		ProductList products = new ProductList();
 		InvoiceList invoices = new InvoiceList(persons, customers, products);
+		System.out.println();
 		
 		output(invoices, pathFive);
 

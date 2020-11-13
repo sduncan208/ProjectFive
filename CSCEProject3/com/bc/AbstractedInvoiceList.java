@@ -9,10 +9,29 @@ public class AbstractedInvoiceList {
 		this.head = null;
 		this.size = 0;
 	}
-	
-	public void sortTotals() {
+	//--------------------------------------------------------------------------//
+	public void orderedInput(InvoiceListNode input) {
+
+		InvoiceListNode current;
 		
+		if (head == null || head.invoiceTotal >= input.invoiceTotal) {
+			input.setNext(head);
+			head = input;
+		} else {
+			current = head;
+			while (current.getNext() != null && current.getNext().invoiceTotal < input.invoiceTotal)
+				current = current.getNext();
+				input.setNext(current.getNext());
+				current.setNext(input);
+		}
 	}
+
+	InvoiceListNode newNode(Invoice invoiceTotal) {
+		InvoiceListNode x = new InvoiceListNode(invoiceTotal);
+		return x;
+	}
+
+    //--------------------------------------------------------------------------------//
 
 	public int getSize() {
 		return this.size;
