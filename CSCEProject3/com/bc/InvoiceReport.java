@@ -17,7 +17,7 @@ public class InvoiceReport {
 		return inputStuff;
 	}
 	
-	public static void output(InvoiceList invoices, String path) throws FileNotFoundException {
+	public static void output(AbstractedInvoiceList invoices, String path) throws FileNotFoundException {
 		SummaryWriter writer = new SummaryWriter(invoices, path);
 		writer.printing();
 	}
@@ -29,16 +29,9 @@ public class InvoiceReport {
 		CustomerList customers = new CustomerList(persons);
 		ProductList products = new ProductList();
 		InvoiceList invoices = new InvoiceList(persons, customers, products);
-		
-		
 		AbstractedInvoiceList tester = new AbstractedInvoiceList();
-		for (int i = 0; i < invoices.getSize(); i ++) {
-			tester.addToEnd(invoices.getObject(i));
-		}
 		
-		tester.print();
-		
-		//output(invoices, pathFive);
+		output(tester, pathFive);
 
 	}
 }

@@ -10,8 +10,14 @@ public class AbstractedInvoiceList {
 		this.size = 0;
 	}
 
-	public void sortTotals() {
-
+	public int sortingIndex(Invoice t) {
+double invoiceTotal = t.total();
+		
+		for (int i = 0; i < size; i ++) {
+			if (getInvoice(i).total() < invoiceTotal)
+				return i;
+		}
+		return size;
 	}
 
 	public int getSize() {
@@ -24,24 +30,33 @@ public class AbstractedInvoiceList {
 			remove(i);
 		}
 	}
-
-	public void addToEnd(Invoice t) {
+	
+	//Adding at an index
+	public void add(Invoice t) {
 		if (this.size == 0) {
 			InvoiceListNode temp = new InvoiceListNode(t);
 			temp.setNext(this.head);
 			this.head = temp;
-			this.size++;
+			this.size ++;
 			return;
 		}
-
-		InvoiceListNode temp = this.head;
-		while (temp.getNext() != null) {
-			temp = temp.getNext();
+		
+		int index = sortingIndex(t);
+		
+		if(index == 0) {
+			InvoiceListNode temp = new InvoiceListNode(t);
+			temp.setNext(this.head);
+			this.head = temp;
+			this.size ++;
+			return;
 		}
-
-		InvoiceListNode endNode = new InvoiceListNode(t);
-		temp.setNext(endNode);
-		this.size++;
+		
+		
+		InvoiceListNode now = this.getInvoiceListNode(index - 1);
+		InvoiceListNode newNode = new InvoiceListNode(t);
+		newNode.setNext(now.getNext());
+		now.setNext(newNode);
+		this.size ++;
 	}
 
 	public void remove(int position) {
@@ -74,6 +89,15 @@ public class AbstractedInvoiceList {
 
 	public Invoice getInvoice(int position) {
 		return getInvoiceListNode(position).getInvoice();
+	}
+	
+	public Invoice codeToObject(String code) {
+		for (int i = 0; i < this.size; i ++) {
+			if (getInvoice(i).getInvoiceCode().equals(code))
+				return getInvoice(i);
+		}
+		
+		return null;
 	}
 
 	public void print() {

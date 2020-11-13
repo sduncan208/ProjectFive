@@ -10,10 +10,10 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class SummaryWriter {
-	private InvoiceList invoices;
+	private AbstractedInvoiceList invoices;
 	private String path;
-
-	public SummaryWriter(InvoiceList _invoices, String _path) throws FileNotFoundException {
+	
+	public SummaryWriter(AbstractedInvoiceList _invoices, String _path) throws FileNotFoundException {
 		this.invoices = _invoices;
 		this.path = _path;
 	}
@@ -34,7 +34,7 @@ public class SummaryWriter {
 		double taxes = 0;
 		double total = 0;
 		for (int i = 0; i < this.invoices.getSize(); i++) {
-			Invoice temp = this.invoices.getObject(i);
+			Invoice temp = this.invoices.getInvoice(i);
 			//Calculations calculator = new Calculations(temp);
 			subtotal += temp.subtotal();
 			discounts += temp.discounts();
@@ -61,33 +61,33 @@ public class SummaryWriter {
 			System.out.println("");
 			System.out.println("Invoice Details:");
 			System.out.println(("-").repeat(128));
-			System.out.println("Invoice " + this.invoices.getObject(i).getInvoiceCode());
+			System.out.println("Invoice " + this.invoices.getInvoice(i).getInvoiceCode());
 			System.out.println(("-").repeat(30));
 
 			System.out.println("Owner:");
 			System.out.println(
-					String.format("        %-40s", this.invoices.getObject(i).getPersonAssociated().getName()));
-			if (this.invoices.getObject(i).getPersonAssociated().emailsToString() != null)
+					String.format("        %-40s", this.invoices.getInvoice(i).getPersonAssociated().getName()));
+			if (this.invoices.getInvoice(i).getPersonAssociated().emailsToString() != null)
 				System.out.println(String.format("        %-40s",
-						this.invoices.getObject(i).getPersonAssociated().emailsToString()));
+						this.invoices.getInvoice(i).getPersonAssociated().emailsToString()));
 			System.out.println(String.format("        %-40s",
-					this.invoices.getObject(i).getPersonAssociated().getAddress().getStreet()));
+					this.invoices.getInvoice(i).getPersonAssociated().getAddress().getStreet()));
 			System.out.println(String.format("        %-40s",
-					this.invoices.getObject(i).getPersonAssociated().getAddress().getCity() + ", "
-							+ this.invoices.getObject(i).getPersonAssociated().getAddress().getState() + " "
-							+ this.invoices.getObject(i).getPersonAssociated().getAddress().getCountry() + " "
-							+ this.invoices.getObject(i).getPersonAssociated().getAddress().getZip()));
+					this.invoices.getInvoice(i).getPersonAssociated().getAddress().getCity() + ", "
+							+ this.invoices.getInvoice(i).getPersonAssociated().getAddress().getState() + " "
+							+ this.invoices.getInvoice(i).getPersonAssociated().getAddress().getCountry() + " "
+							+ this.invoices.getInvoice(i).getPersonAssociated().getAddress().getZip()));
 
 			System.out.println("Customer:");
 			System.out.println(
-					String.format("        %-40s", this.invoices.getObject(i).getCustomerAssociated().getName()));
+					String.format("        %-40s", this.invoices.getInvoice(i).getCustomerAssociated().getName()));
 			System.out.println(String.format("        %-40s",
-					this.invoices.getObject(i).getCustomerAssociated().getAddress().getStreet()));
+					this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getStreet()));
 			System.out.println(String.format("        %-40s",
-					this.invoices.getObject(i).getCustomerAssociated().getAddress().getCity() + ", "
-							+ this.invoices.getObject(i).getCustomerAssociated().getAddress().getState() + " "
-							+ this.invoices.getObject(i).getCustomerAssociated().getAddress().getCountry() + " "
-							+ this.invoices.getObject(i).getCustomerAssociated().getAddress().getZip()));
+					this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getCity() + ", "
+							+ this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getState() + " "
+							+ this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getCountry() + " "
+							+ this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getZip()));
 
 			System.out.println("Products:");
 			System.out.println("  " + String.format("%-12s", "Code") + String.format("%-70s", "Description")
@@ -96,10 +96,10 @@ public class SummaryWriter {
 			System.out.println("  " + ("-").repeat(124));
 
 			// Writes out each product
-			//Calculations calculator = new Calculations(this.invoices.getObject(i));
-			Invoice tempTwo = this.invoices.getObject(i);
-			for (int j = 0; j < this.invoices.getObject(i).getProductsAssociated().size(); j++) {
-				InvoiceProduct temp = this.invoices.getObject(i).getProductsAssociated().get(j);
+			//Calculations calculator = new Calculations(this.invoices.getInvoice(i));
+			Invoice tempTwo = this.invoices.getInvoice(i);
+			for (int j = 0; j < this.invoices.getInvoice(i).getProductsAssociated().size(); j++) {
+				InvoiceProduct temp = this.invoices.getInvoice(i).getProductsAssociated().get(j);
 				String descriptionOne = "";
 				String descriptionTwo = "";
 
@@ -141,7 +141,7 @@ public class SummaryWriter {
 					+ "  " + String.format("$%9.2f", tempTwo.discounts()) + "  "
 					+ String.format("$%9.2f", tempTwo.taxes()) + "  " + String.format("$%7.2f", tempTwo.total()));
 
-			if (this.invoices.getObject(i).getCustomerAssociated().getCustomerType().equals("B"))
+			if (this.invoices.getInvoice(i).getCustomerAssociated().getCustomerType().equals("B"))
 				System.out.println(
 						String.format("%-120s", "Business Account Fees:") + String.format("$%7.2f", tempTwo.fees()));
 			if (tempTwo.loyalCustomer() != 0)
@@ -171,7 +171,7 @@ public class SummaryWriter {
 		double taxes = 0;
 		double total = 0;
 		for (int i = 0; i < this.invoices.getSize(); i++) {
-			Invoice temp = this.invoices.getObject(i);
+			Invoice temp = this.invoices.getInvoice(i);
 			//Calculations calculator = new Calculations(temp);
 			subtotal += temp.subtotal();
 			discounts += temp.discounts();
@@ -198,33 +198,33 @@ public class SummaryWriter {
 			writer.println("");
 			writer.println("Invoice Details:");
 			writer.println(("-").repeat(128));
-			writer.println("Invoice " + this.invoices.getObject(i).getInvoiceCode());
+			writer.println("Invoice " + this.invoices.getInvoice(i).getInvoiceCode());
 			writer.println(("-").repeat(30));
 
 			writer.println("Owner:");
 			writer.println(
-					String.format("        %-40s", this.invoices.getObject(i).getPersonAssociated().getName()));
-			if (this.invoices.getObject(i).getPersonAssociated().emailsToString() != null)
+					String.format("        %-40s", this.invoices.getInvoice(i).getPersonAssociated().getName()));
+			if (this.invoices.getInvoice(i).getPersonAssociated().emailsToString() != null)
 				writer.println(String.format("        %-40s",
-						this.invoices.getObject(i).getPersonAssociated().emailsToString()));
+						this.invoices.getInvoice(i).getPersonAssociated().emailsToString()));
 			writer.println(String.format("        %-40s",
-					this.invoices.getObject(i).getPersonAssociated().getAddress().getStreet()));
+					this.invoices.getInvoice(i).getPersonAssociated().getAddress().getStreet()));
 			writer.println(String.format("        %-40s",
-					this.invoices.getObject(i).getPersonAssociated().getAddress().getCity() + ", "
-							+ this.invoices.getObject(i).getPersonAssociated().getAddress().getState() + " "
-							+ this.invoices.getObject(i).getPersonAssociated().getAddress().getCountry() + " "
-							+ this.invoices.getObject(i).getPersonAssociated().getAddress().getZip()));
+					this.invoices.getInvoice(i).getPersonAssociated().getAddress().getCity() + ", "
+							+ this.invoices.getInvoice(i).getPersonAssociated().getAddress().getState() + " "
+							+ this.invoices.getInvoice(i).getPersonAssociated().getAddress().getCountry() + " "
+							+ this.invoices.getInvoice(i).getPersonAssociated().getAddress().getZip()));
 
 			writer.println("Customer:");
 			writer.println(
-					String.format("        %-40s", this.invoices.getObject(i).getCustomerAssociated().getName()));
+					String.format("        %-40s", this.invoices.getInvoice(i).getCustomerAssociated().getName()));
 			writer.println(String.format("        %-40s",
-					this.invoices.getObject(i).getCustomerAssociated().getAddress().getStreet()));
+					this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getStreet()));
 			writer.println(String.format("        %-40s",
-					this.invoices.getObject(i).getCustomerAssociated().getAddress().getCity() + ", "
-							+ this.invoices.getObject(i).getCustomerAssociated().getAddress().getState() + " "
-							+ this.invoices.getObject(i).getCustomerAssociated().getAddress().getCountry() + " "
-							+ this.invoices.getObject(i).getCustomerAssociated().getAddress().getZip()));
+					this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getCity() + ", "
+							+ this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getState() + " "
+							+ this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getCountry() + " "
+							+ this.invoices.getInvoice(i).getCustomerAssociated().getAddress().getZip()));
 
 			writer.println("Products:");
 			writer.println("  " + String.format("%-12s", "Code") + String.format("%-70s", "Description")
@@ -233,10 +233,10 @@ public class SummaryWriter {
 			writer.println("  " + ("-").repeat(124));
 
 			// Writes out each product
-			//Calculations calculator = new Calculations(this.invoices.getObject(i));
-			Invoice tempTwo = this.invoices.getObject(i);
-			for (int j = 0; j < this.invoices.getObject(i).getProductsAssociated().size(); j++) {
-				InvoiceProduct temp = this.invoices.getObject(i).getProductsAssociated().get(j);
+			//Calculations calculator = new Calculations(this.invoices.getInvoice(i));
+			Invoice tempTwo = this.invoices.getInvoice(i);
+			for (int j = 0; j < this.invoices.getInvoice(i).getProductsAssociated().size(); j++) {
+				InvoiceProduct temp = this.invoices.getInvoice(i).getProductsAssociated().get(j);
 				String descriptionOne = "";
 				String descriptionTwo = "";
 
@@ -278,7 +278,7 @@ public class SummaryWriter {
 					+ "  " + String.format("$%9.2f", tempTwo.discounts()) + "  "
 					+ String.format("$%9.2f", tempTwo.taxes()) + "  " + String.format("$%7.2f", tempTwo.total()));
 
-			if (this.invoices.getObject(i).getCustomerAssociated().getCustomerType().equals("B"))
+			if (this.invoices.getInvoice(i).getCustomerAssociated().getCustomerType().equals("B"))
 				writer.println(
 						String.format("%-120s", "Business Account Fees:") + String.format("$%7.2f", tempTwo.fees()));
 			if (tempTwo.loyalCustomer() != 0)
