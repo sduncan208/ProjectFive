@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="com.bc.InvoiceList" project="CSCEProject3" 
     file="/CSCEProject3/com/bc/InvoiceList.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="764" y="399"/>    
+    <position height="-1" width="-1" x="390" y="1965"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="com.bc.CustomerList" project="CSCEProject3" 
     file="/CSCEProject3/com/bc/CustomerList.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="411" y="1673"/>    
+    <position height="-1" width="-1" x="1026" y="2007"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="com.bc.Name" project="CSCEProject3" file="/CSCEProject3/com/bc/Name.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="723" y="2543"/>    
+    <position height="-1" width="-1" x="702" y="1433"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="com.bc.Invoice" project="CSCEProject3" file="/CSCEProject3/com/bc/Invoice.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="747" y="870"/>    
+    <position height="-1" width="-1" x="435" y="2421"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="com.bc.InvoiceProduct" project="CSCEProject3" 
     file="/CSCEProject3/com/bc/InvoiceProduct.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1660" y="1205"/>    
+    <position height="-1" width="-1" x="1571" y="1039"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="com.bc.Address" project="CSCEProject3" file="/CSCEProject3/com/bc/Address.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1435" y="2535"/>    
+    <position height="-1" width="-1" x="1262" y="1547"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="com.bc.AddressName" project="CSCEProject3" 
     file="/CSCEProject3/com/bc/AddressName.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1044" y="2570"/>    
+    <position height="-1" width="-1" x="1147" y="1636"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="com.bc.ProductList" project="CSCEProject3" 
     file="/CSCEProject3/com/bc/ProductList.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1398" y="1693"/>    
+    <position height="-1" width="-1" x="1737" y="2016"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </class>  
   <class id="17" language="java" name="com.bc.Customer" project="CSCEProject3" file="/CSCEProject3/com/bc/Customer.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="274" y="2283"/>    
+    <position height="-1" width="-1" x="1024" y="2412"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +156,7 @@
   </class>  
   <class id="18" language="java" name="com.bc.Person" project="CSCEProject3" file="/CSCEProject3/com/bc/Person.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1021" y="2205"/>    
+    <position height="-1" width="-1" x="1434" y="2377"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,266 +174,247 @@
   </class>  
   <class id="20" language="java" name="com.bc.Product" project="CSCEProject3" file="/CSCEProject3/com/bc/Product.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1808" y="2113"/>    
+    <position height="-1" width="-1" x="1749" y="2293"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="com.bc.Calculations" project="CSCEProject3" 
-    file="/CSCEProject3/com/bc/Calculations.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1563" y="707"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
+  <class id="21" language="java" name="com.bc.AbstractedInvoiceList" project="CSCEProject3" 
+    file="/CSCEProject3/com/bc/AbstractedInvoiceList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1077" y="87"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="false">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="22">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
+  <class id="22" language="java" name="com.bc.InvoiceListNode" project="CSCEProject3" 
+    file="/CSCEProject3/com/bc/InvoiceListNode.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="663" y="103"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="false" 
+      sort-features="false" accessors="true" visibility="false">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <association id="23">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="24" name="customerName">        
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="24" name="allPeople">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="25" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="27" name="listOfObjects">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="28" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="29">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="30" name="invoice">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="31" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="32">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <association id="33">    
-    <bendpoint x="161" y="1405"/>    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="34" name="customerAssociated">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="35" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="37" name="allPeople">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="38" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="40" name="associatedRepair">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="41" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="42">    
+  <generalization id="26">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="28">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="43" name="listOfObjects">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="29" name="listOfObjects">        
+        <position height="0" width="0" x="-312" y="1551"/>      
       </attribute>      
-      <multiplicity id="44" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="30" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-312" y="1551"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="45">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="46" name="personName">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="47" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="48">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="49" name="address">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="50" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="51">    
+  <generalization id="31">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <realization id="32">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="33">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="52" name="allCustomers">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="34" name="allCustomers">        
+        <position height="0" width="0" x="615" y="334"/>      
       </attribute>      
-      <multiplicity id="53" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="35" minimum="0" maximum="1">        
+        <position height="0" width="0" x="615" y="334"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="54">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="55" name="invoices">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="56" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="57">    
+  <association id="36">    
     <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="58" name="personAddress">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="37" name="personAddress">        
+        <position height="0" width="0" x="-173" y="-988"/>      
       </attribute>      
-      <multiplicity id="59" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="38" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-173" y="-988"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="60">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="61">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <association id="62">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="63" name="allProducts">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="64" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="65">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="66" name="listOfObjects">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="67" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="68">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <association id="69">    
-    <bendpoint x="613" y="1405"/>    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="70" name="personAssociated">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="71" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="72">    
+  <realization id="39">    
     <bendpoint x="182" y="929"/>    
     <bendpoint x="182" y="1405"/>    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <generalization id="73">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <realization id="74">    
+  <realization id="40">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <association id="75">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="76" name="productsAssociated">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="41">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="42" name="address">        
+        <position height="0" width="0" x="-173" y="-988"/>      
       </attribute>      
-      <multiplicity id="77" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="43" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-173" y="-988"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="45" name="associatedRepair">        
+        <position height="0" width="0" x="-59" y="180"/>      
+      </attribute>      
+      <multiplicity id="46" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-59" y="180"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="48" name="allProducts">        
+        <position height="0" width="0" x="339" y="323"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="339" y="323"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="51" name="productsAssociated">        
+        <position height="0" width="0" x="-89" y="-166"/>      
+      </attribute>      
+      <multiplicity id="52" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-89" y="-166"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="78">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="79" name="listOfObjects">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="53">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="54" name="listOfObjects">        
+        <position height="0" width="0" x="750" y="129"/>      
       </attribute>      
-      <multiplicity id="80" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="55" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="750" y="129"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="56">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="57">    
+    <bendpoint x="613" y="1405"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="58" name="personAssociated">        
+        <position height="0" width="0" x="413" y="172"/>      
+      </attribute>      
+      <multiplicity id="59" minimum="0" maximum="1">        
+        <position height="0" width="0" x="413" y="172"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="81">    
-    <end type="SOURCE" refId="10"/>    
+  <association id="60">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="61" name="listOfObjects">        
+        <position height="0" width="0" x="-59" y="180"/>      
+      </attribute>      
+      <multiplicity id="62" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-59" y="180"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="64" name="personName">        
+        <position height="0" width="0" x="-21" y="-1110"/>      
+      </attribute>      
+      <multiplicity id="65" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-21" y="-1110"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
+  <association id="67">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="68" name="invoices">        
+        <position height="0" width="0" x="-374" y="1566"/>      
+      </attribute>      
+      <multiplicity id="69" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-374" y="1566"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <bendpoint x="161" y="1405"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="71" name="customerAssociated">        
+        <position height="0" width="0" x="750" y="129"/>      
+      </attribute>      
+      <multiplicity id="72" minimum="0" maximum="1">        
+        <position height="0" width="0" x="750" y="129"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="74" name="listOfObjects">        
+        <position height="0" width="0" x="413" y="172"/>      
+      </attribute>      
+      <multiplicity id="75" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="413" y="172"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="false" 
     sort-features="false" accessors="true" visibility="false">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
