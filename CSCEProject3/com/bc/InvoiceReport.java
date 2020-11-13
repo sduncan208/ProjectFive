@@ -29,7 +29,10 @@ public class InvoiceReport {
 		CustomerList customers = new CustomerList(persons);
 		ProductList products = new ProductList();
 		InvoiceList invoices = new InvoiceList(persons, customers, products);
+
 		AbstractedInvoiceList tester = new AbstractedInvoiceList();
+		System.out.println();
+
 		
 		output(tester, pathFive);
 

@@ -2,6 +2,7 @@ package com.bc;
 
 public class InvoiceListNode {
 
+	public final double invoiceTotal = getInvoice().total();
 	private InvoiceListNode next;
 	private Invoice item;
 
