@@ -10,15 +10,6 @@ public class AbstractedInvoiceList {
 		this.size = 0;
 	}
 
-	public int sortingIndex(Invoice t) {
-double invoiceTotal = t.total();
-		
-		for (int i = 0; i < size; i ++) {
-			if (getInvoice(i).total() < invoiceTotal)
-				return i;
-		}
-		return size;
-
 	public void orderedInput(InvoiceListNode input) {
 
 		InvoiceListNode current;
