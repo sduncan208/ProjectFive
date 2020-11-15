@@ -1,3 +1,8 @@
+/* Sophia Duncan(37182093) & Joe Stollar(93721732) 
+ *  
+ * CSCE 156 
+ */
+
 package com.bc;
  
 import java.util.ArrayList;
