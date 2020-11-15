@@ -1,0 +1,88 @@
+{
+  "listOfCustomers": [
+    {
+      "customerCode": "LYC85wdI8",
+      "customerType": "P",
+      "name": "Dancing Cars",
+      "customerName": "Gawande, Atul",
+      "contactCode": "sXob6KfTY",
+      "address": {
+        "street": "779 New Creek Road",
+        "city": "Centre",
+        "state": "AL",
+        "zip": "35960",
+        "country": "USA"
+      }
+    },
+    {
+      "customerCode": "9Ghfv1D8Q",
+      "customerType": "P",
+      "name": "Musical Cars",
+      "customerName": "Crowley, Beth",
+      "contactCode": "VB0H2eeZ1",
+      "address": {
+        "street": "163 Ocello Street",
+        "city": "Moundridge",
+        "state": "KS",
+        "zip": "67107",
+        "country": "USA"
+      }
+    },
+    {
+      "customerCode": "vOt6Um0CD",
+      "customerType": "B",
+      "name": "Car Tech",
+      "customerName": "Duncan, Eva",
+      "contactCode": "vacd5nyil",
+      "address": {
+        "street": "1037 Zimmerman Lane",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90017",
+        "country": "USA"
+      }
+    },
+    {
+      "customerCode": "kcpCPabp5",
+      "customerType": "P",
+      "name": "Winter Driving",
+      "customerName": "Miller, Joel",
+      "contactCode": "MgBh27YSF",
+      "address": {
+        "street": "938 Armory Road",
+        "city": "Wilmington",
+        "state": "NC",
+        "zip": "28403",
+        "country": "USA"
+      }
+    },
+    {
+      "customerCode": "hd2T880os",
+      "customerType": "P",
+      "name": "TARDIS",
+      "customerName": "McLoughlin, Sean",
+      "contactCode": "NQNxh5hbD",
+      "address": {
+        "street": "2041 Fowler Avenue",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30303",
+        "country": "USA"
+      }
+    },
+    {
+      "customerCode": "r23EMj4NO",
+      "customerType": "B",
+      "name": "Boise Library",
+      "customerName": "Duncan, Eva",
+      "contactCode": "vacd5nyil",
+      "address": {
+        "street": "3043 Forest Drive",
+        "city": "Dale City",
+        "state": "VA",
+        "zip": "22193",
+        "country": "USA"
+      }
+    }
+  ]
+}

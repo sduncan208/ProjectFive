@@ -1,0 +1,73 @@
+{
+  "listOfProducts": [
+    {
+      "productCode": "4GXqp6LxM",
+      "productType": "R",
+      "productLabel": "1967 Chevy Impala",
+      "dailyCost": 102.75,
+      "deposit": 200.0,
+      "cleaningFee": 25.55
+    },
+    {
+      "productCode": "KzQW71qkj",
+      "productType": "F",
+      "productLabel": "Windsheild Repair",
+      "partsCost": 150.5,
+      "hourlyLaborCost": 30.25
+    },
+    {
+      "productCode": "Vc5PhEvTK",
+      "productType": "C",
+      "productLabel": "16-oz Coffee",
+      "unitCost": 4.25
+    },
+    {
+      "productCode": "miga0IebX",
+      "productType": "T",
+      "productLabel": "Tow \u003e 15 miles",
+      "costPerMile": 6.75
+    },
+    {
+      "productCode": "efG1izvXg",
+      "productType": "R",
+      "productLabel": "2005 Toyota 4 Runner",
+      "dailyCost": 86.45,
+      "deposit": 60.24,
+      "cleaningFee": 24.54
+    },
+    {
+      "productCode": "wPOObkXsf",
+      "productType": "F",
+      "productLabel": "Engine Replacement",
+      "partsCost": 1554.23,
+      "hourlyLaborCost": 50.23
+    },
+    {
+      "productCode": "JgLLovuUT",
+      "productType": "C",
+      "productLabel": "16-oz Tea",
+      "unitCost": 2.98
+    },
+    {
+      "productCode": "dPWRS9BbV",
+      "productType": "T",
+      "productLabel": "Tow \u003c 15 miles",
+      "costPerMile": 8.5
+    },
+    {
+      "productCode": "QgbJUIxaC",
+      "productType": "R",
+      "productLabel": "2012 Toyota Sienna",
+      "dailyCost": 75.56,
+      "deposit": 100.0,
+      "cleaningFee": 20.65
+    },
+    {
+      "productCode": "ruYJAqcp4",
+      "productType": "F",
+      "productLabel": "Oil Change",
+      "partsCost": 60.5,
+      "hourlyLaborCost": 40.5
+    }
+  ]
+}
